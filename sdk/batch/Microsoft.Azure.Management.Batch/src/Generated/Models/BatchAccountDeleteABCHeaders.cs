@@ -14,27 +14,29 @@ namespace Microsoft.Azure.Management.Batch.Models
     using System.Linq;
 
     /// <summary>
-    /// Defines headers for Delete operation.
+    /// Defines headers for DeleteABC operation.
     /// </summary>
-    public partial class BatchAccountDeleteHeaders
+    public partial class BatchAccountDeleteABCHeaders
     {
         /// <summary>
-        /// Initializes a new instance of the BatchAccountDeleteHeaders class.
+        /// Initializes a new instance of the BatchAccountDeleteABCHeaders
+        /// class.
         /// </summary>
-        public BatchAccountDeleteHeaders()
+        public BatchAccountDeleteABCHeaders()
         {
             CustomInit();
         }
 
         /// <summary>
-        /// Initializes a new instance of the BatchAccountDeleteHeaders class.
+        /// Initializes a new instance of the BatchAccountDeleteABCHeaders
+        /// class.
         /// </summary>
         /// <param name="location">The URL of the resource used to check the
         /// status of the asynchronous operation.</param>
         /// <param name="retryAfter">Suggested delay to check the status of the
         /// asynchronous operation. The value is an integer that specifies the
         /// delay in seconds.</param>
-        public BatchAccountDeleteHeaders(string location = default(string), int? retryAfter = default(int?))
+        public BatchAccountDeleteABCHeaders(string location = default(string), int? retryAfter = default(int?))
         {
             Location = location;
             RetryAfter = retryAfter;
