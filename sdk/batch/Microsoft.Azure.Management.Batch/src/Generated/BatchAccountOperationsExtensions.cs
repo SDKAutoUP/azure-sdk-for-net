@@ -139,9 +139,9 @@ namespace Microsoft.Azure.Management.Batch
             /// <param name='accountName'>
             /// The name of the Batch account.
             /// </param>
-            public static BatchAccountDeleteHeaders Delete(this IBatchAccountOperations operations, string resourceGroupName, string accountName)
+            public static BatchAccountDeleteABCHeaders DeleteABC(this IBatchAccountOperations operations, string resourceGroupName, string accountName)
             {
-                return operations.DeleteAsync(resourceGroupName, accountName).GetAwaiter().GetResult();
+                return operations.DeleteABCAsync(resourceGroupName, accountName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -159,9 +159,9 @@ namespace Microsoft.Azure.Management.Batch
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<BatchAccountDeleteHeaders> DeleteAsync(this IBatchAccountOperations operations, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<BatchAccountDeleteABCHeaders> DeleteABCAsync(this IBatchAccountOperations operations, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.DeleteWithHttpMessagesAsync(resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.DeleteABCWithHttpMessagesAsync(resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Headers;
                 }
@@ -484,9 +484,9 @@ namespace Microsoft.Azure.Management.Batch
             /// <param name='accountName'>
             /// The name of the Batch account.
             /// </param>
-            public static BatchAccountDeleteHeaders BeginDelete(this IBatchAccountOperations operations, string resourceGroupName, string accountName)
+            public static BatchAccountDeleteABCHeaders BeginDeleteABC(this IBatchAccountOperations operations, string resourceGroupName, string accountName)
             {
-                return operations.BeginDeleteAsync(resourceGroupName, accountName).GetAwaiter().GetResult();
+                return operations.BeginDeleteABCAsync(resourceGroupName, accountName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -504,9 +504,9 @@ namespace Microsoft.Azure.Management.Batch
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<BatchAccountDeleteHeaders> BeginDeleteAsync(this IBatchAccountOperations operations, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<BatchAccountDeleteABCHeaders> BeginDeleteABCAsync(this IBatchAccountOperations operations, string resourceGroupName, string accountName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.BeginDeleteWithHttpMessagesAsync(resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.BeginDeleteABCWithHttpMessagesAsync(resourceGroupName, accountName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Headers;
                 }
