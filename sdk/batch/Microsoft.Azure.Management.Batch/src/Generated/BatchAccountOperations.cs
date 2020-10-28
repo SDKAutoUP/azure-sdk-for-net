@@ -75,10 +75,10 @@ namespace Microsoft.Azure.Management.Batch
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        public async Task<AzureOperationResponse<BatchAccount,BatchAccountCreateHeaders>> CreateWithHttpMessagesAsync(string resourceGroupName, string accountName, BatchAccountCreateParameters parameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<BatchAccount,BatchAccountCreateXHeaders>> CreateXWithHttpMessagesAsync(string resourceGroupName, string accountName, BatchAccountCreateParameters parameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             // Send Request
-            AzureOperationResponse<BatchAccount,BatchAccountCreateHeaders> _response = await BeginCreateWithHttpMessagesAsync(resourceGroupName, accountName, parameters, customHeaders, cancellationToken).ConfigureAwait(false);
+            AzureOperationResponse<BatchAccount,BatchAccountCreateXHeaders> _response = await BeginCreateXWithHttpMessagesAsync(resourceGroupName, accountName, parameters, customHeaders, cancellationToken).ConfigureAwait(false);
             return await Client.GetPutOrPatchOperationResultAsync(_response, customHeaders, cancellationToken).ConfigureAwait(false);
         }
 
@@ -1579,7 +1579,7 @@ namespace Microsoft.Azure.Management.Batch
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<AzureOperationResponse<BatchAccount,BatchAccountCreateHeaders>> BeginCreateWithHttpMessagesAsync(string resourceGroupName, string accountName, BatchAccountCreateParameters parameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<AzureOperationResponse<BatchAccount,BatchAccountCreateXHeaders>> BeginCreateXWithHttpMessagesAsync(string resourceGroupName, string accountName, BatchAccountCreateParameters parameters, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (resourceGroupName == null)
             {
@@ -1631,7 +1631,7 @@ namespace Microsoft.Azure.Management.Batch
                 tracingParameters.Add("accountName", accountName);
                 tracingParameters.Add("parameters", parameters);
                 tracingParameters.Add("cancellationToken", cancellationToken);
-                ServiceClientTracing.Enter(_invocationId, this, "BeginCreate", tracingParameters);
+                ServiceClientTracing.Enter(_invocationId, this, "BeginCreateX", tracingParameters);
             }
             // Construct URL
             var _baseUrl = Client.BaseUri.AbsoluteUri;
@@ -1743,7 +1743,7 @@ namespace Microsoft.Azure.Management.Batch
                 throw ex;
             }
             // Create Result
-            var _result = new AzureOperationResponse<BatchAccount,BatchAccountCreateHeaders>();
+            var _result = new AzureOperationResponse<BatchAccount,BatchAccountCreateXHeaders>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             if (_httpResponse.Headers.Contains("x-ms-request-id"))
@@ -1770,7 +1770,7 @@ namespace Microsoft.Azure.Management.Batch
             }
             try
             {
-                _result.Headers = _httpResponse.GetHeadersAsJson().ToObject<BatchAccountCreateHeaders>(JsonSerializer.Create(Client.DeserializationSettings));
+                _result.Headers = _httpResponse.GetHeadersAsJson().ToObject<BatchAccountCreateXHeaders>(JsonSerializer.Create(Client.DeserializationSettings));
             }
             catch (JsonException ex)
             {
